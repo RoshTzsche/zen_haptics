@@ -1,47 +1,31 @@
 # HapticBall
 
-HapticBall is an interactive Android physics simulation built with Jetpack Compose. It combines real-time kinematics with an advanced, spatial haptic feedback system to create a tactile and immersive mobile experience.
+An Android physics sandbox built with Jetpack Compose, with haptic feedback that changes depending on what the ball hits and how hard.
 
-![HapticBall Banner](https://via.placeholder.com/800x400.png?text=HapticBall+Simulation) *<!-- Replace with a real screenshot if available -->*
+<img src="docs/screenshot.png" alt="Sandbox mode" width="300">
 
-## 🚀 Features
+## Features
 
-### 🛠️ Real-time Physics Engine
-*   **Verlet Integration**: High-performance constraint solver for realistic rope and ball kinematics.
-*   **Anti-Tunneling**: Advanced collision detection that prevents high-velocity objects from passing through obstacles.
-*   **Responsive World**: All physics math operates in a normalized 1000x1000 unit space, ensuring identical behavior across all screen sizes and aspect ratios.
+- **Physics**: Verlet integration, collision detection that avoids tunneling, and a normalized 1000x1000 world so it behaves the same on any screen.
+- **Haptics**: Different vibrations for walls, balls and obstacles. Intensity scales with impact speed, and impacts lower on the screen feel deeper. Uses the Android 11+ haptic composition API with fallbacks for older devices.
+- **Sandbox**: Spawn balls, draw obstacles and tweak gravity and viscosity.
+- **Levels**: 10 puzzle levels with lethal red obstacles. Progress is saved.
 
-### 🖐️ Advanced Spatial Haptics
-*   **Material-Based Feedback**: Distinct vibration signatures for walls (solid/thuddy), balls (sharp/metallic), and obstacles (tactile).
-*   **Spatial Mapping**: Collisions at the bottom of the screen provide deeper, low-frequency feedback, while top-screen impacts are sharper and lighter.
-*   **Dynamic Intensity**: Vibration strength scales linearly with impact velocity for a nuanced tactile feel.
-*   **Haptic Primitives**: Leverages Android 11+ Haptic Composition API with robust fallbacks for older devices.
+## Installation
 
-### 🎮 Game Modes
-*   **Sandbox**: A free-play environment where you can spawn balls, draw custom obstacles, and manipulate physics constants like gravity and viscosity.
-*   **Levels**: 10 hand-crafted puzzle levels that increase in difficulty, featuring lethal red obstacles and persistent progression.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RoshTzsche/zen_haptics.git
+   ```
+2. Open it in Android Studio (Ladybug or newer).
+3. Run it on a physical device. Emulators don't support the haptics.
 
-### 📱 Modern Android Tech Stack
-*   **Jetpack Compose**: 100% declarative UI.
-*   **Material 3**: Clean, modern design with adaptive light/dark theme support.
-*   **Persistence**: Automatically saves your last played level and minigame state.
-*   **Onboarding**: An interactive animated tutorial for new users.
+## How to play
 
-## 🛠️ Installation
+- **Long press** the background to open physics settings or the level selector.
+- **Sandbox**: use the floating button to switch between GRAB (move balls) and DRAW (create obstacles).
+- **Levels**: get the ball to the goal without touching red lines. Use the refresh button to restart.
 
-1.  Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/HapticBall.git
-    ```
-2.  Open the project in **Android Studio (Ladybug or newer)**.
-3.  Sync Gradle and run the app on a physical device to experience the haptic feedback (emulators do not support advanced haptics).
+## License
 
-## 🎮 How to Play
-
-*   **Long Press**: Tap and hold the background in any mode to open the **Physics Settings** or **Level Selector**.
-*   **Sandbox**: Use the floating action button to switch between **GRAB** (move balls) and **DRAW** (create obstacles).
-*   **Levels**: Guide the ball to the goal while avoiding lethal red lines. Use the refresh button in the corner to restart if you get stuck.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT. See [LICENSE](LICENSE).
